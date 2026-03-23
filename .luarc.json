@@ -1,0 +1,14 @@
+{
+    "workspace": {
+        "library": ["./cc-apis", "./packages", "./turtles/crane_controller"],
+        "ignoreDir": ["C:\\"]
+    },
+    "runtime": {
+        "version": "Lua 5.1",
+        "path": ["?.lua", "?/init.lua"]
+    },
+    "diagnostics": {
+        "globals": ["turtle", "peripheral", "redstone", "fs", "term", "sleep"]
+    },
+    "Lua.diagnostics.enable": true
+}

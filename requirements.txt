@@ -1,0 +1,11 @@
+configparser==7.2.0
+jsons==1.6.3
+pathlib==1.0.1
+pyasynchat==1.0.5
+pyasyncore==1.0.5
+pyftpdlib==2.2.0
+PyMySQL==1.1.2
+python-dotenv==1.2.2
+regex==2026.2.28
+shutils==0.1.0
+typish==1.9.3

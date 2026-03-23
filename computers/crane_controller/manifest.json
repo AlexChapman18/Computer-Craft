@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "common",
+        "log",
+        "sticker",
+        "block_reader"
+    ],
+    "delete_whitelist": [
+        "CraneConfig.lua"
+    ]
+}

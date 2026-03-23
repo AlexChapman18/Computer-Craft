@@ -1,41 +1,19 @@
-# Compiled Lua sources
-luac.out
+# Python venv
+.venv
+.mypy_cache
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+# tasks.json
+.vscode
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+# FTP host configs
+hosts/*
+!hosts/.env.example
 
-# Precompiled Headers
-*.gch
-*.pch
+# Build distributions
+dist
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+# Native CC apis for LUA auto complete
+cc-apis
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+# Config file for current deployment
+config

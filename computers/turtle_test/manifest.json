@@ -1,0 +1,6 @@
+{
+    "dependencies": [
+        "turtle_helpers",
+        "digital_miner"
+    ]
+}

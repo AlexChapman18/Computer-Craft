@@ -1,0 +1,10 @@
+{
+    "log": "log/",
+    "turtle_helpers": "turtle_helpers/",
+    "common": "common/",
+    "digital_miner": "peripherals/mekanism/digital_miner/",
+    "block_reader": "peripherals/advanced_peripherals/block_reader/",
+    "relay": "peripherals/advanced_peripherals/relay/",
+    "sticker": "create/sticker/",
+    "train_station": "create/train_station/"
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "crane_controller",
+        "computer_id": 20
+    },
+    {
+        "name": "block_reader_test",
+        "computer_id": 16
+    },
+    {
+        "name": "turtle_test",
+        "computer_id": 22
+    }
+]
