@@ -7,8 +7,8 @@ local interact = {
 }
 
 -- Imports
-local equip = require("turtle_helpers.equipment")
-local inv = require("turtle_helpers.inventory")
+local equip = require("packages.turtle_helpers.equipment")
+local inv = require("packages.turtle_helpers.inventory")
 
 -- Enum
 SideDigFunc = {
@@ -31,6 +31,12 @@ SideInspectFunc = {
 function interact.mineBlockAbove()
 	equip.right(equip.Equipment.PICKAXE)
 	return turtle.digUp()
+end
+
+-- Block Breaking
+function interact.mineBlockForward()
+	equip.right(equip.Equipment.PICKAXE)
+	return turtle.dig()
 end
 
 -- Block quering

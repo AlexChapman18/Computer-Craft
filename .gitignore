@@ -7,7 +7,14 @@
 
 # FTP host configs
 hosts/*
-!hosts/.env.example
+!hosts/example.env
+
+# Profiles
+profiles/*
+!profiles/example.json
+
+# Cache
+.cache
 
 # Build distributions
 dist
@@ -17,3 +24,6 @@ cc-apis
 
 # Config file for current deployment
 config
+
+# Pycache
+**/__pycache__/

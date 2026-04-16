@@ -8,7 +8,15 @@
         "computer_id": 16
     },
     {
-        "name": "turtle_test",
+        "name": "train_announcer",
+        "computer_id": 23
+    },
+    {
+        "name": "TCS_manager",
         "computer_id": 22
+    },
+    {
+        "name": "TCS_manager",
+        "computer_id": 26
     }
 ]

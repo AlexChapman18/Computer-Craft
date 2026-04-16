@@ -4,19 +4,25 @@ import shutil
 from pathlib import Path
 from shutil import ignore_patterns
 
+from Exceptions.UserError import UserError
 
 # Paths
 PACKAGES_ROOT = Path("packages")
+DIST_PACKAGES_ROOT = Path("packages")
 COMPUTERS_PATH = Path("computers")
 DISTS_PATH = Path("dist")
 MANIFEST_FILENAME = "manifest.json"
 PACKAGES_LAYOUT_PATH = PACKAGES_ROOT / "packages.json"
 
 
-def build_packages(manifest_path, dist):
+def build_packages(computer_path, dist):
+    manifest_path = computer_path / MANIFEST_FILENAME
+
     # Open packages layout
     with open(PACKAGES_LAYOUT_PATH) as f:
         packages_layout = json.load(f)
+
+
 
     include_packages(packages_layout, manifest_path, dist)
 
@@ -31,7 +37,7 @@ def include_packages(packages_layout, manifest_path, dist):
 
         # Verify package name is valid
         if pkg_name not in packages_layout:
-            raise Exception(f"Package not in packages.json: \"{pkg_name}\"") 
+            raise UserError(f"Package not in packages.json: \"{pkg_name}\"") 
 
         package_relative_path = packages_layout[pkg_name]
 
@@ -40,16 +46,26 @@ def include_packages(packages_layout, manifest_path, dist):
         if not os.path.exists(local_package_path):
             # Cleanup partial build
             shutil.rmtree(dist, ignore_errors=True)
-            raise Exception(f"Package does not exist: \"{pkg_name}\"") 
+            raise UserError(f"Package does not exist: \"{pkg_name}\"") 
+
+        # # Check if package has dependencies
+        # package_manifest_path = local_package_path / MANIFEST_FILENAME
+        # if os.path.exists(package_manifest_path):
+        #     include_packages(packages_layout, package_manifest_path, dist)
+
 
         # Check if package has dependencies
-        package_manifest_path = local_package_path / MANIFEST_FILENAME
-        if os.path.exists(package_manifest_path):
-            include_packages(packages_layout, package_manifest_path, dist)
+        relative = local_package_path.relative_to(PACKAGES_ROOT)
+        current  = PACKAGES_ROOT
+        for part in relative.parts[:-1]:
+            current  = current / part
+            manifest  = current / MANIFEST_FILENAME
+            if manifest.exists():
+                include_packages(packages_layout, manifest, dist)
         
         # Copy package contents
-        remote_package_path = dist / pkg_name
-        shutil.copytree(local_package_path, remote_package_path, dirs_exist_ok=True, ignore=ignore_patterns(MANIFEST_FILENAME))
+        dist_package_path = dist / DIST_PACKAGES_ROOT / package_relative_path
+        shutil.copytree(local_package_path, dist_package_path, dirs_exist_ok=True, ignore=ignore_patterns(MANIFEST_FILENAME))
 
 
 def main():
@@ -71,8 +87,7 @@ def main():
         dist.mkdir(parents=True, exist_ok=True)
 
         # Load manifest
-        manifest_path = computer_folder / MANIFEST_FILENAME
-        build_packages(manifest_path, dist)
+        build_packages(computer_folder, dist)
 
         # Copy turtle-specific code
         for src_path in computer_folder.rglob("*"):

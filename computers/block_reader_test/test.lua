@@ -1,7 +1,7 @@
-Sticker = require("sticker")
-Station = require("train_station")
-Relay = require("relay")
-Common = require("common")
+Sticker = require("packages.create.sticker")
+Station = require("packages.create.train_station")
+Relay = require("packages.peripherals.advanced_peripherals.relay")
+Common = require("packages.common")
 
 local my_sticker = Sticker.new("block_reader_3", "redstone_relay_199", Common.Side.FRONT)
 local my_station = Station.new("Create_Station_16", "redstone_relay_206", "redstone_relay_207", Common.Side.BACK, Common.Side.TOP, Common.Side.RIGHT, Common.Side.FRONT)

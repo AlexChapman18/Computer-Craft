@@ -8,7 +8,16 @@
         "path": ["?.lua", "?/init.lua"]
     },
     "diagnostics": {
-        "globals": ["turtle", "peripheral", "redstone", "fs", "term", "sleep"]
+        "globals": [
+            "turtle",
+            "peripheral",
+            "redstone",
+            "fs",
+            "term",
+            "sleep",
+            "http",
+            "textutils"
+        ]
     },
     "Lua.diagnostics.enable": true
 }

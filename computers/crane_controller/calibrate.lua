@@ -1,8 +1,8 @@
 -- Imports
 Logger = require "log"
 Logger:enable()
-Sticker = require("sticker")
-Common = require("common")
+Sticker = require("packages.create.sticker")
+Common = require("packages.common")
 
 local Side = {
     FRONT = "front",

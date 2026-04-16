@@ -1,4 +1,4 @@
-local Relay = require("relay")
+local Relay = require("packages.peripherals.advanced_peripherals.relay")
 
 local Station = {}
 Station.__index = Station

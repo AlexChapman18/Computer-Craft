@@ -6,5 +6,8 @@
     "block_reader": "peripherals/advanced_peripherals/block_reader/",
     "relay": "peripherals/advanced_peripherals/relay/",
     "sticker": "create/sticker/",
-    "train_station": "create/train_station/"
+    "train_station_plus": "create/train_station_plus/",
+    "train_station": "peripherals/create/train_station/",
+    "speaker_block": "peripherals/supplementaries/speaker_block",
+    "peripherals_base": "peripherals_base"
 }

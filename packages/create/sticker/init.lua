@@ -1,5 +1,5 @@
-local Reader = require("block_reader")
-local Relay = require("relay")
+local Reader = require("packages.block_reader")
+local Relay = require("packages.relay")
 local Logger = require "log"
 -- Logger:disable()
 

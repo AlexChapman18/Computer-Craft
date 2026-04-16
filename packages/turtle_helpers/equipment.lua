@@ -11,7 +11,7 @@ local equip = {
 }
 
 -- imports
-local inventory = require("turtle_helpers.inventory")
+local inventory = require("packages.turtle_helpers.inventory")
 
 -- Enum
 GetEquipmentFunc = {

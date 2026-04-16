@@ -1,0 +1,7 @@
+{
+    "dependencies": [
+        "common",
+        "train_station",
+        "speaker_block"
+    ]
+}
